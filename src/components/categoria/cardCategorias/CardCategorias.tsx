@@ -1,23 +1,33 @@
 import { Link } from 'react-router-dom'
+import Categoria from '../../../models/Categoria';
 
-function CardCategorias () {
+
+interface CardCategoriasProps {
+    categoria: Categoria
+}
+
+function CardCategorias({ categoria }: CardCategoriasProps) {
     return (
-        <div className='p-10 grid flex-col rounded-4xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-purple-500 text-white font-bold text-2xl'>Categorias
-            </header>
-            <p className='p-8 text-3xl bg-slate-100 h-full'>Remédios</p>
+        <div className='border-4 border-fuchsia-800 rounded-2xl p-6 flex flex-col items-center gap-4'>
+            <h2 className='text-fuchsia-600 text-xl font-bold text-center'>
+            </h2>
+            <p className='text-gray-700 text-center'>
+                {categoria.descricao}
+            </p>
 
-            <div className="flex">
-                <Link to='' 
-                    className='w-full text-slate-100 bg-green-400 hover:bg-indigo-800 
-                        flex items-center justify-center py-2'>
-                    <button>Editar</button>
+            <div className='flex'>
+                <Link to={`/editarCategoria/${categoria.id}`}
+	                className='bg-green-300 hover:bg-blue-400 text-black font-semibold
+                    px-4 py-2 rounded-lg border border-black'>
+	                <button>Editar</button>
                 </Link>
 
-                <Link to='' className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
-                    flex items-center justify-center'>
-                    <button>Deletar</button>
+                <Link to={`/deletarCategoria/${categoria.id}`} 
+	                className='bg-red-500 hover:bg-red-600 text-white font-semibold 
+                    px-4 py-2 rounded-lg border border-black'>
+	                <button>Deletar</button>
                 </Link>
+
             </div>
 
         </div>

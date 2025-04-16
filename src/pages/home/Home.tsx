@@ -1,3 +1,5 @@
+import ListaCategoria from "../../components/listaCategorias/ListaCategoria"
+
 function Home() {
    return (
       <>
@@ -8,7 +10,7 @@ function Home() {
                         Tech Farmacia
                      </h2>
                      <p className='text-xl'>
-                        Saúde em primeiro lugar!
+                        Cuidar da sua saúde é a nossa prioridade
                      </p>
 
                      <div className="flex justify-around gap-4">
@@ -24,6 +26,7 @@ function Home() {
                      />
             </div>
          </div>
+         <ListaCategoria />
       </>
    )
 }
