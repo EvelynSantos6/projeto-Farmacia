@@ -8,11 +8,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import DeletarCategoria from './components/deletarCategoria/DeletarCategoria';
 
-
-
 function App() {
-  return (
-    <>
+    return (
+      <>
       <BrowserRouter>
       <ToastContainer />
           <Navbar />
