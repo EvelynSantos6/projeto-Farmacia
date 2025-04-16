@@ -19,7 +19,7 @@ const [categorias, setCategorias] = useState<Categoria[]>([])
     
     useEffect(() => {
         buscarCategorias()
-    }, [categorias.length])
+    }, [])
 
     return (
         <>

@@ -9,9 +9,13 @@ export const buscar = async (url: string, setDados: Function, header: Object = {
     setDados(resposta.data);
 }
 
-export const cadastrar = async (url: string, dados: Object, setDados: Function, header: Object) => {
-    const resposta = await api.post(url, dados, header)
-    setDados(resposta.data)
+export async function cadastrar (url: string, dados: any, setDado: Function, config: Object) {
+    try {
+    const resposta = await api.post(url, dados, config);
+    setDado(resposta.data);
+    } catch (error) {
+    throw new Error("Erro ao cadastrar: " + error);
+    }
 }
 
 export const atualizar = async (url: string, dados: Object, setDados: Function, header: Object) => {

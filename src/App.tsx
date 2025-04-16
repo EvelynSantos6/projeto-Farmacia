@@ -8,11 +8,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import DeletarCategoria from './components/deletarCategoria/DeletarCategoria';
 
-
-
 function App() {
   return (
-    <>
+      <>
       <BrowserRouter>
       <ToastContainer />
           <Navbar />
@@ -22,7 +20,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/categorias" element={<ListaCategoria />} />
               <Route path="/cadastrarCategoria" element={<FormCategoria />} /> 
-              <Route path="/editarCategoria" element={<FormCategoria />} /> 
+              <Route path="/editarCategoria/:id" element={<FormCategoria />} /> 
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
             </Routes>
           </div>
